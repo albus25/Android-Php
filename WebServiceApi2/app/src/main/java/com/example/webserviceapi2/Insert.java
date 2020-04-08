@@ -62,12 +62,12 @@ public class Insert extends AppCompatActivity implements AdapterView.OnItemSelec
 
         Calendar c = Calendar.getInstance();
         int day = c.get(Calendar.DAY_OF_MONTH);
-        int month = c.get(Calendar.MONTH + 1);
+        int month = c.get(Calendar.MONTH);
         int year = c.get(Calendar.YEAR);
         datePicker = new DatePickerDialog(this,new DatePickerDialog.OnDateSetListener(){
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                String dt = year + "-" + month + "-" + dayOfMonth;
+                String dt = year + "-" + (month+1) + "-" + dayOfMonth;
                 txtBD.setText(dt);
             }
         },year,month,day);
